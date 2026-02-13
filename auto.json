@@ -1592,7 +1592,7 @@ bot.start(async (ctx) => {
 〢☐ Developer: FaiqOffc
 〢☐ Username: ${ctx.from.first_name}
 〢☐ Language: JavaScript
-〢☐ Version: 130 Gen 80
+〢☐ Version: 140 Gen 80
 
 🖥 - 𝐒𝐢𝐬𝐭𝐞𝐦 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧
 ────────────────
@@ -1655,7 +1655,7 @@ bot.action('/start', async (ctx) => {
 〢☐ Developer: FaiqOffc
 〢☐ Username: ${ctx.from.first_name}
 〢☐ Language: JavaScript
-〢☐ Version: 130 Gen 80
+〢☐ Version: 140 Gen 80
 
 🖥 - 𝐒𝐢𝐬𝐭𝐞𝐦 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧
 ────────────────
@@ -1822,7 +1822,7 @@ bot.action('/about', async (ctx) => {
 <blockquote>
  Name       : FaiqCrash
  Developer   : @FaiqOffc
- Version      : 120 Gen 80
+ Version      : 140 Gen 80
  Language    : JavaScript (Node.js)
 
  Description :
