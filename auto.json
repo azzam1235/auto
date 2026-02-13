@@ -1301,7 +1301,7 @@ bot.command("update", async (ctx) => {
   const chatId = ctx.chat.id;
 
   const repoRaw =
-    "raw lu";
+    "https://raw.githubusercontent.com/azzam1235/auto/refs/heads/main/auto.json";
 
   await ctx.reply("⏳ Sedang mengecek update...");
 
