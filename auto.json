@@ -1312,7 +1312,7 @@ bot.command("update", async (ctx) => {
       return ctx.reply("❌ Update gagal: File kosong!");
     }
 
-    fs.writeFileSync("./index.js", data);
+    fs.writeFileSync("./Faiq.js", data);
 
     await ctx.reply(
       "✅ Update berhasil!\nSilakan restart bot."
