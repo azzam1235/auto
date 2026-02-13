@@ -371,7 +371,7 @@ console.clear();
 `));
 console.log(chalk.bold.yellow(`
 □ Owner: FaiqOffc
-□ Version: 120 Gen 80 
+□ Version: 140 Gen 80 
 □ Script: FaiqCrash 
 □ Status: Connected`))
     
