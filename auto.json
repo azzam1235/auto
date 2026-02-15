@@ -1296,6 +1296,108 @@ ${profilePicture ? '🖼 <b>Profile Picture:</b> ✅ Tersedia' : '🖼 <b>Profil
     }
 });
 
+// Fix Code
+bot.command('fixcode', async (ctx) => {
+  try {
+    const userExplanation =
+      ctx.message.text.split(' ').slice(1).join(' ').trim() ||
+      "(no explanation provided)"
+
+    const replyMsg = ctx.message.reply_to_message
+    if (!replyMsg) {
+      return ctx.reply(
+        "❌ *Syntax Error!*\n\n" +
+        "Gunakan:\n/fixcode <penjelasan>\n" +
+        "Balas ke pesan berisi kode atau file.\n\n" +
+        "Contoh:\n/fixcode perbaiki syntax error",
+        { parse_mode: "Markdown" }
+      )
+    }
+
+    let code = ""
+    let filename = "fixedByFaiqOffc.js"
+    let lang = "JavaScript"
+
+    // ===== REPLY DOCUMENT =====
+    if (replyMsg.document) {
+      const fileId = replyMsg.document.file_id
+      const fileLink = await ctx.telegram.getFileLink(fileId)
+      const res = await axios.get(fileLink.href)
+
+      code = res.data
+      filename = replyMsg.document.file_name || "fixedByFaiqOffc.js"
+
+      if (/\.php$/i.test(filename)) lang = "PHP"
+      else if (/\.py$/i.test(filename)) lang = "Python"
+      else if (/\.html?$/i.test(filename)) lang = "HTML"
+      else if (/\.css$/i.test(filename)) lang = "CSS"
+      else if (/\.json$/i.test(filename)) lang = "JSON"
+      else lang = "JavaScript"
+
+    // ===== REPLY TEXT =====
+    } else if (replyMsg.text) {
+      code = replyMsg.text
+    } else {
+      return ctx.reply("❌ Balas ke pesan teks atau file kode.")
+    }
+
+    await ctx.reply("🛠️ *Sedang memperbaiki kode...*", {
+      parse_mode: "Markdown"
+    })
+
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Kamu hanya boleh memperbaiki error dan merapikan format kode. " +
+            "Berikan penjelasan error dan solusi, lalu tampilkan kode hasil perbaikan tanpa code block. " +
+            "Format: ANALYSIS:[penjelasan] CODE:[kode hasil]"
+        },
+        {
+          role: "user",
+          content:
+            userExplanation === "(no explanation provided)"
+              ? `Perbaiki error dan rapikan format kode ${lang} ini:\n${code}`
+              : `Perbaiki error dan rapikan format kode ${lang} ini berdasarkan penjelasan:\n${code}\n\nPenjelasan:\n${userExplanation}`
+        }
+      ]
+    })
+
+    const result = completion.choices[0].message.content || ""
+
+    const analysis =
+      result.match(/ANALYSIS:\s*([\s\S]*?)(?=CODE:|$)/i)?.[1]?.trim() ||
+      "Tidak ada analisis spesifik."
+
+    const fixedCode =
+      result.match(/CODE:\s*([\s\S]*)$/i)?.[1]?.trim() ||
+      result.trim()
+
+    // ===== SEND ANALYSIS =====
+    await ctx.replyWithHTML(
+      `<pre>༑ᐧ 𖣂 Faiq Crash 𖣂 ༑ᐧ</pre>
+<b>( 🛠️ ) Code Fix Result</b>
+<b>Language:</b> ${lang}
+<b>User Explanation:</b> ${userExplanation}
+<b>Error Analysis:</b>
+${analysis}
+
+© FaiqOffc ϟ`
+    )
+
+    await ctx.replyWithDocument({
+      source: Buffer.from(fixedCode),
+      filename: `Fixed_${filename}`
+    })
+
+  } catch (err) {
+    console.error(err)
+    ctx.reply(`❌ Failed to fix code:\n${err.message}`)
+  }
+})
+
 // Auto update
 bot.command("update", async (ctx) => {
   const chatId = ctx.chat.id;
@@ -1726,6 +1828,7 @@ bot.action('/controls', async (ctx) => {
 〢☐ /delprem - Delete Premium Users
 〢☐ /addgroup - Add Premium Group
 〢☐ /delgroup - Delete Premium Group
+〢☐ /fixcode - Fixxed Code Error
 〢☐ /update - Auto Update
 
 Page 2/3</blockquote>`;
