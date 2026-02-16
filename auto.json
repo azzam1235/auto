@@ -1934,26 +1934,26 @@ bot.action('/Faiq', async (ctx) => {
 
 🧬 - 𝐃𝐞𝐥𝐚𝐲 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ──────────────
-〢☐ /FaiqxRaraInvisCombo [ Invisible Delay Combo Forclose ]
-〢☐ /FaiqxRaraMediumCombo [ Medium Delay Combo Forclose ]
-〢☐ /FaiqxRaraHardCombo [ Delay Hard Combo Forclose ]
-〢☐ /FaiqxRaraExtremeCombo [ Extreme Delay Combo Forclose ]
-〢☐ /FaiqxRaraSuperCombo [ Super Delay Combo Forclose ]
+〢☐ /FaiqxRaraInvisCombo
+〢☐ /FaiqxRaraMediumCombo
+〢☐ /FaiqxRaraHardCombo
+〢☐ /FaiqxRaraExtremeCombo
+〢☐ /FaiqxRaraSuperCombo
 
 🧬 - 𝐅𝐨𝐫𝐜𝐥𝐨𝐬𝐞 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ────────────────
-〢☐ /FaiqxRaraForceCallCombo [ Forclose Spam Call Combo Delay ]
-〢☐ /FaiqxRaraForceCombo [ Forcloce Delete Messenge Combo Delay ]
-〢☐ /FaiqxRaraForceInvisCombo [ Forcloce Spam Call Invis Combo Delay ]
-〢☐ /FaiqxRaraForceDelayCombo [ Forcloce Invisible Hard Combo Delay ]
+〢☐ /FaiqxRaraForceCallCombo
+〢☐ /FaiqxRaraForceCombo
+〢☐ /FaiqxRaraForceInvisCombo
+〢☐ /FaiqxRaraForceDelayCombo
 
 🧬 - 𝐂𝐫𝐚𝐬𝐡 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ──────────────
-〢☐ /FaiqxRaraBlankCombo [ Blank Andro Combo Forclose ]
-〢☐ /FaiqxRaraBlankV2Combo [ Blank Andro Hard Combo Forclose ]
-〢☐ /FaiqxRaraCrashCombo [ Crash Andro Combo Forclose ]
-〢☐ /FaiqxRaraCrashInvisCombo [ Crash Andro Invisible Combo Forclose ]
-〢☐ /FaiqxRaraCrashInfinityCombo [ Crash Andro Invisible Infinity Combo Forclose ]
+〢☐ /FaiqxRaraBlankCombo
+〢☐ /FaiqxRaraBlankV2Combo
+〢☐ /FaiqxRaraCrashCombo
+〢☐ /FaiqxRaraCrashInvisCombo
+〢☐ /FaiqxRaraCrashInfinityCombo
 
 🧬 - 𝐌𝐮𝐥𝐭𝐢 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ──────────────
