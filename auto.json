@@ -1908,7 +1908,7 @@ Page 3/4</blockquote>`;
                 url: "https://t.me/FaiqOffc"
             }, 
             {   text: ">",
-                callback_data: "/bug2"
+                callback_data: "/Faiq"
             }
         ]
     ];
@@ -1928,7 +1928,7 @@ Page 3/4</blockquote>`;
     }
 });
 
-bot.action('/bug2', async (ctx) => {
+bot.action('/Faiq', async (ctx) => {
     const bugMenu = `
 <blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
 
@@ -1992,7 +1992,6 @@ Page 4/5</blockquote>`;
         }
     }
 });
-
 bot.action('/about', async (ctx) => {
     const aboutMenu = `
 <blockquote>
