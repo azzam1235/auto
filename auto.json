@@ -1934,26 +1934,26 @@ bot.action('/Faiq', async (ctx) => {
 
 🧬 - 𝐃𝐞𝐥𝐚𝐲 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ──────────────
-〢☐ /FaiqxRaraInvisCombo
-〢☐ /FaiqxRaraMediumCombo
-〢☐ /FaiqxRaraHardCombo
-〢☐ /FaiqxRaraExtremeCombo
-〢☐ /FaiqxRaraSuperCombo
+〢☐ /FaiqxRaraInvisCombo [ DELAY X FC ]
+〢☐ /FaiqxRaraMediumCombo [ DELAY X FC ]
+〢☐ /FaiqxRaraHardCombo [ DELAY X FC ]
+〢☐ /FaiqxRaraExtremeCombo [ DELAY X FC ]
+〢☐ /FaiqxRaraSuperCombo [ DELAY X FC ]
 
 🧬 - 𝐅𝐨𝐫𝐜𝐥𝐨𝐬𝐞 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ────────────────
-〢☐ /FaiqxRaraForceCallCombo
-〢☐ /FaiqxRaraForceCombo
-〢☐ /FaiqxRaraForceInvisCombo
-〢☐ /FaiqxRaraForceDelayCombo
+〢☐ /FaiqxRaraForceCallCombo [ FC X DELAY ]
+〢☐ /FaiqxRaraForceCombo [ FC X DELAY ]
+〢☐ /FaiqxRaraForceInvisCombo [ FC X DELAY ]
+〢☐ /FaiqxRaraForceDelayCombo [ FC X DELAY ]
 
 🧬 - 𝐂𝐫𝐚𝐬𝐡 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
 ──────────────
-〢☐ /FaiqxRaraBlankCombo
-〢☐ /FaiqxRaraBlankV2Combo
-〢☐ /FaiqxRaraCrashCombo
-〢☐ /FaiqxRaraCrashInvisCombo
-〢☐ /FaiqxRaraCrashInfinityCombo
+〢☐ /FaiqxRaraBlankCombo [ BLANK X FC ]
+〢☐ /FaiqxRaraBlankV2Combo [ BLANK X FC ]
+〢☐ /FaiqxRaraCrashCombo [ CRASH X FC ]
+〢☐ /FaiqxRaraCrashInvisCombo [ CRASH X FC ]
+〢☐ /FaiqxRaraCrashInfinityCombo [ CRASH X FC ]
 
 🧬 - 𝐌𝐮𝐥𝐭𝐢 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ──────────────
